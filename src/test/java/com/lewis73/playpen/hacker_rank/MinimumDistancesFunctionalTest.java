@@ -5,9 +5,9 @@ import org.junit.Test;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;
 
-public class MinimumDistancesTest {
+public class MinimumDistancesFunctionalTest {
 
-    MinimumDistances testSubject = new MinimumDistances();
+    MinimumDistancesFunctional testSubject = new MinimumDistancesFunctional();
 
     @Test
     public void happyDegenerate() {
