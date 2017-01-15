@@ -56,19 +56,14 @@ public class CircularArrayRotation {
         if (m.length != q) {
             throw new IllegalArgumentException("m length must = q");
         }
-        int [] rotatedPrev = new int [n];
-        System.arraycopy(a, 0, rotatedPrev, 0, n);
-        int [] rotated = new int[n];
-        int nMinus1 = n - 1;
         for (int i = 0; i < k; i++) {
-            for (int j = 0; j < n; j++) {
-                rotated[j == (nMinus1) ? 0 : j + 1] = rotatedPrev[j];
-            }
-            System.arraycopy(rotated, 0, rotatedPrev, 0, n);
+            int last = a[n - 1];
+            System.arraycopy(a, 0, a, 1, n - 1);
+            a[0] = last;
         }
         int [] toReturn = new int[q];
         for (int i = 0; i < q; i++) {
-            toReturn[i] = rotated[m[i]];
+            toReturn[i] = a[m[i]];
         }
 
         return toReturn;

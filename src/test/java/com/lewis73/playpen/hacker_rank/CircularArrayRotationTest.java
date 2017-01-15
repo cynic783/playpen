@@ -83,4 +83,15 @@ public class CircularArrayRotationTest {
             assertThat(expected, is(observed));
         }
     }
+
+    @Test
+    public void hackerRankTestCase10() throws IOException {
+        Path inputPath = Paths.get("/Users/dan/projects/playpen/circularArrayRotationTestCase10Input.txt");
+        Path expectedOutputPath = Paths.get("/Users/dan/projects/playpen/circularArrayRotationTestCase10Output.txt");
+        try (InputStream input = Files.newInputStream(inputPath, StandardOpenOption.READ)) {
+            List<Integer> observed = testSubject.solve(input);
+            List<Integer> expected = Files.lines(expectedOutputPath).map(Integer::parseInt).collect(Collectors.toList());
+            assertThat(expected, is(observed));
+        }
+    }
 }
